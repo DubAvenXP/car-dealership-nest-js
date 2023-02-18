@@ -8,9 +8,11 @@ import {
   Patch,
   Post,
 } from '@nestjs/common';
-import { CarsService } from './cars.service';
 
+import { CarsService } from './cars.service';
+import { CreateCarDto } from './dtos/create-car.dto';
 @Controller('cars')
+// @UsePipes(ValidationPipe)
 export class CarsController {
   constructor(private readonly carsService: CarsService) {}
 
@@ -25,8 +27,8 @@ export class CarsController {
   }
 
   @Post()
-  create(@Body() body: any) {
-    return body;
+  create(@Body() createCarDto: CreateCarDto) {
+    return this.carsService.create(createCarDto);
   }
 
   @Patch(':id')
