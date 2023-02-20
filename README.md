@@ -32,6 +32,12 @@
 $ yarn install
 ```
 
+## Running Seed
+
+```
+http://localhost:3000/seed
+```
+
 ## Running the app
 
 ```bash
